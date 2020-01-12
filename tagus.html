@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="img/logo.webp" type="image/x-icon" />
+
+    <!-- Page css -->
+    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/javascript.css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+
+    <!-- leaflet base -->
+    <script async src="/javascript/leaflet/tagus/tagus.js"></script>
+    <script async src="/javascript/leaflet/tagus/lisbon.js"></script>
+    <script async src="/javascript/leaflet/tagus/riverbasin.js"></script>
+
+    <!-- Leaflet layers -->
+    <script async src="/javascript/leaflet/tagus/buildagelisbon.js"></script>
+    <script async src="/javascript/leaflet/tagus/tejoestuary.js"></script>
+    <script async src="/javascript/leaflet/tagus/tejoriverbasin.js"></script>
+    <script async src="/javascript/leaflet/tagus/rivertagus.js"></script>
+    <script async src="/javascript/leaflet/tagus/tagusline.js"></script>
+
+    <!-- ChartJS -->
+    <script async src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script async src="/javascript/chartjs/tagus/rainlisbon.js"></script>
+
+    <title>Taag</title>
+</head>
+
+<body>
+    <div class="menu">
+        <a id="toggle" onClick="javascript: menu = document.querySelector('.menu'); menu.classList.toggle('open');">
+            Menu
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+                <path
+                    d='M22,6.5a1.5,1.5,0,0,0-1.061.439L12,15.879,3.061,6.939A1.5,1.5,0,0,0,.939,9.061l10,10a1.5,1.5,0,0,0,2.122,0l10-10A1.5,1.5,0,0,0,22,6.5Z'>
+                </path>
+            </svg>
+        </a>
+        <nav class="nav">
+            <ul>
+                <li class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.webp" alt="Logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="thames.html">Theems</a>
+                </li>
+                <li class="active">
+                    <a href="tagus.html">Taag</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="header">
+        <div class="header-img">
+            <img class="lazyload" src="img/tagus-map.webp" alt="">
+        </div>
+        <div class="header-txt">
+            Taag
+        </div>
+    </div>
+    <div class="intro-txt">
+        <h1 class="intro-txt-h1">Quickfacts</h1>
+        <h2 class="intro-txt-h2">Levensader voor Lissabon</h2>
+        <p class="intro-txt-txtblck">
+            Lissabon, de hoofdstad en de grootste van Portugal, is gevestigd aan het Taag estuarium.
+        </p>
+        <p class="intro-txt-txtblck">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste et sequi commodi obcaecati dignissimos
+            provident odio enim autem quo, atque qui inventore asperiores voluptas quidem consectetur iusto consequuntur
+            vel? Inventore?
+        </p>
+    </div>
+    <!-- item = location -->
+    <div class="lislocation">
+        <div class="lislocation-content">
+            <div id="tagus"></div>
+        </div>
+        <div class="lislocation-txt">
+            <h1 class="headliner-txt-h1">Ligging</h1>
+            <p>
+                De rivier Taag, of in het Portugees <em>Rio Tejo</em> en in het Spaans <em>Río Tajo</em>, is een rivier
+                stroomt door Spanje en Portugal en uitmondt in het Taag estuarium. De Taag is ongeveer 1000 kilometer
+                lang en ontspringt bij Muela de San Juan in het oosten van Spanje.
+            </p>
+            <p>
+                Het estuarium, met een oppervlakte van 340 km<sup>2</sup> waar de Taag uitmondt ligt op ongeveer de
+                volgende coördinaten:
+                <h2 class="h2-coordinates">38°43'29.7"N 9°04'18.9"W</h2>
+            </p>
+        </div>
+    </div>
+    <!-- item = climate -->
+    <div class="lisclimate">
+        <div class="lisclimate-content">
+            <div class="graph-lisbon">
+                <canvas id="rainlisbon"></canvas>
+            </div>
+        </div>
+        <div class="lisclimate-txt">
+            <h1 class="lisclimate-txt-h1">Klimaat</h1>
+            <p>
+                Het klimaat van het estuarium is volgens de klimaatclassificatie van Geiger-Köppen <em>Csa</em>, dit
+                houdt in dat het maritiem klimaat betreft met een warme zomer. Bij het Csa klimaat is er een droge
+                periode, deze valt in de zomer.
+                De warmste maand is gemiddeld warmer dan 22°C.
+            </p>
+            <p>
+                De maand oktober is de natste maand met een gemiddelde neerslag van 68,5 mm, wat gemiddeld valt in 10,8
+                dagen in de maand oktober. In vergelijking met Nederland valt er weinig neerslag, in de maand oktober
+                valt er gemiddeld 89,6 mm regen, dit valt in Nederland gemiddeld in 17 dagen.
+            </p>
+        </div>
+    </div>
+    <!-- item = buildings -->
+    <div class="lisbuildings">
+        <div class="lisbuildings-content">
+            <div id="lisbon"></div>
+        </div>
+        <div class="lisbuildings-txt">
+            <h1 class="lisbuildings-txt-h1">Gebouwen in Lissabon</h1>
+            <p>
+                Lissabon is een oude stad, dit opgemaakt worden wanneer er gekeken wordt naar de gemiddelde bouwjaren
+                van gebouwen uit de wijken van Lissabon. De eerste grote gebouwen, vaak kerken en paleizen van koningen,
+                werden gebouwd van steen. De huizen van burgers waren eerst gebouwd van hout, later zijn deze vervangen
+                door stenen gebouwen. Hierdoor zijn de oudste gebouwen in Lissabon vaak kerken en paleizen van koningen.
+                <br><br>
+                <em>Notitie: de bouwjaren zijn gegeneraliseerd voor het gehele gebied.</em>
+            </p>
+            <p>
+                Op de kaart zijn de bouwjaren van Lissabon weergegeven, op de kaart is onder meer te zien dat:
+                <ul>
+                    <li>Lissabon is concentrisch gebouwd, de rest van de stad is gebouwd om het oude centrum heen</li>
+                    <li>Het oude centrum dichtbij het estuarium is gevestgd</li>
+                    <li>De leeftijd van de gebouwen is bij het estuarium het hoogste, hoe verder de wijken van het
+                        estuarium af gebouwd zijn, hoe jonger de wijken van Lissabon zijn. </li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <hr class="sep" />
+
+    <!-- Geology -->
+    <div class="geology">
+        <div class="geology-txt">
+            <h1 class="geology-txt-h1">Natuurlijke eigenschappen</h1>
+            <h2 class="geology-txt-h2">Ontstaanswijze en het stroomgebied</h2>
+        </div>
+    </div>
+    <div class="lisbon-estuary-expl">
+        <div class="lisbon-estuary-expl-content">
+            <img class="lazyload" src="img/tagusestuary.webp" width="100%" height="100%" alt="luchtfoto estuarium">
+        </div>
+        <div class="lisbon-estuary-expl-txt">
+            <h1 class="lisbon-estuary-expl-h1">Wat is een estuarium?</h1>
+            <p>
+                Het Taag estuarium is een semi-ingesloten waterlichaam dat een open verbinding heeft met de zee
+                en waar het zoute water verdund is met zoet water wat afkomstig is van het land. Een estuarium kan ook
+                aangeduid worden als een <em>verdronken rivierdal</em>. Het mixen van het zoete en zoute water is één
+                van de eisen die gesteld worden bij de aanduiding van een estuarium.
+            </p>
+            <p>
+                Het rivierdal is onder water komen te staan in de laatste ijstijd, de rivier heeft in de tijd dat de
+                zeespiegel een stuk lager was ingesneden in het land, dit heeft ervoor gezorgd dat er een rivierdal is
+                ontstaan. Dit rivierdal is onderwater komen te staan dat het klimaat over de hele wereld warmer werd en
+                de zeespiegel weer begon te stijgen.
+            </p>
+            <p>
+                De rivier komt uit in het estuarium en het water van de rivier is zoet water, er zijn weinig mineralen
+                aanwezig die het water zout kunnen maken. Dit water komt terecht in het zoute zeewater, waardoor het
+                water in het water in een estuarium brak (zoet en zout gemixt) is.
+            </p>
+            <p>
+                Het stroomgebied wordt natuurlijk bepaald door natuurlijk gevormde barrières zoals:
+                <ul class="sum">
+                    <li>Niet-waterdoorlatende grondlagen</li>
+                    <li>Bergen</li>
+                    <li>De hoek waarin natuurlijke afzettingen zijn gevormd</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+    <div class="lisbonbasin">
+        <div class="lisbonbasin-content">
+            <div id="riverbasin"></div>
+        </div>
+        <div class="lisbonbasin-txt">
+            <h1 class="lisbonbasin-h1">Stroomgebied van de Taag</h1>
+            <p>
+                Het stroomgebied van de Taag is de op twee na grootste van Iberische schiereiland waar Spanje en
+                Portugal deel van uitmaken. Het stroomgebied van de Taag beslaat een gebied van ongeveer 80.600
+                km<sup>2</sup> en is na stroomgebieden van Ebro en de Douro het grootste stroomgebied.
+            </p>
+            <p>
+                Op de kaart is het stroomgebied van de Taag in het blauw aangegeven. Andere stroomgebieden op het
+                Iberische schiereiland zijn hierbij niet meegenomen.
+            </p>
+            <p>
+                Een stroomgebied is een gebied waar de neerslag zich verzamelt en afvoert naar een gemeenschappelijke
+                uitlaatpunt zoals
+                een rivier. Het stroomgebied omvat al het oppervlaktewater van de neerslag, het smelten van sneeuw en
+                kleine
+                waterlichamen zoals kleine meertjes die in de richting lopen van het gemeenschappelijke uitlaatpunt. Het
+                grondwater dat
+                stroomt richting het uitlaatpunt wordt ook meegerekend bij het stroomgebied.
+            </p>
+        </div>
+    </div>
+
+    <hr class="sep" />
+
+    <!-- history -->
+    <div class="history-txt">
+        <h1 class="histroy-txt-h1">Geschiedenis van Lissabon en de Taag</h1>
+        <h2 class="history-txt-h2">Van de prehistorie tot de hedendaagse Portugezen</h2>
+        <p class="history-txt-txtblck">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime atque molestias maiores cupiditate pariatur
+            quo minima alias totam reiciendis corporis tenetur accusamus autem ipsa, eos distinctio! Ducimus placeat
+            dolore aliquam!
+            <!-- Londen, de hoofdstad van Engeland en het Verenigd Koninkrijk, is één van de oudste grote steden ter wereld
+            en is ongeveer twee millennia geleden gebouwd door de Romeinen. In de huidige tijd is Londen de grootste
+            metropolis en het economisch hart van Engeland en het Verenigd Koninkrijk. -->
+        </p>
+        <p class="history-txt-txtblck">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eum ratione soluta rerum enim quae modi dolor
+            debitis perspiciatis reprehenderit, excepturi labore ducimus nisi saepe totam voluptatem, quasi perferendis
+            hic.
+            <!-- Londen is sinds het oude Londinium al een belangrijk knooppunt van de zee naar het achterland, dit mede door
+            haar
+            ligging vlakbij het estuarium en de Theems die het stroomopwaarts het achterland in gaat. -->
+        </p>
+    </div>
+    <div class="early-history-lisbon">
+        <div class="early-history-lisbon-content">
+            <img class="lazyload" src="/img/Phoenicia.webp" alt="Oude in steen gehouwen tekening van de Feniciërs">
+        </div>
+        <div class="early-history-lisbon-txt">
+            <h1 class="early-history-lisbon-txt-h1">Eerste nederzettingen Taag vallei</h1>
+            <p>
+                De Taag vallei is al millenia lang bewoond door eerst de Neanderthalers en later de homo sapiens, de
+                moderne mens. In de laatste ijstijd, ongeveer 6000 jaar geleden, begonnen mensen zich definitef te
+                vestigen in de Taag vallei vanwege het mildere klimaat in de vallei. In deze vallei waren gemengde
+                bossen te vinden, wat een zeer gunstige vestigingsfactor was voor mensen in die tijd.
+            </p>
+            <p>
+                Ongeveer 6000 v.Chr. werd voor het eerst landbouw bedreven op vruchtbare gronden die in de vallei
+                te vinden waren in het gebied. De gewassen die verbouwd werden waren voornamelijk granen, deze konden
+                goed tegen het klimaat van de Taag vallei.
+                <br>
+                Vanaf het jaar 2500 v.Chr. werd er voor het eerst gebruik gemaakt van zachte metalen als goud en silver,
+                maar vooral in het bijzonder koper.
+            </p>
+            <p>
+                Door wie en wanneer Lissabon is gesticht is niet bekend, maar naar alle waarschijnlijkheid is de stad
+                gesticht in het jaar 1200 v.Chr. als handelspost voor de Feniciërs. Dit volk, afkomstig uit het
+                Midden-Oosten, was een volk dat de belangrijkste zeevaarders van deze tijd leverde van Middellandse Zee.
+                De Feniciërs stichtte op verschillende plaatsen handelsposten en mogelijk was Lissabon daar een van en
+                tot ongeveer 200 v.Chr. bleef het in handen van de Feniciërs.
+            </p>
+        </div>
+    </div>
+    <div class="roman-lisbon">
+        <div class="roman-lisbon-content">
+            <img class="lazyload" src="/img/olisipo.webp" alt="Olispo, Lissabon in de Romeinse tijd">
+        </div>
+        <div class="roman-lisbon-txt">
+            <h1 class="roman-lisbon-txt-h1">Romeins Lissabon</h1>
+            <p>
+                Ongeveer 200 jaar v.Chr. veroverde Romeinen de stad op de Feniciërs en lijfde het in bij hun nieuwe
+                provincie: Hispania Lusitania. De Romeinen doopte de veroverde stad om tot Felicitas Iulia Olisipo,
+                kortweg: Olisipo. Olisipo werd voor het Romeinse Rijk een belangrijke stad, voornamelijk vanwege de
+                natuurlijke ligging. Het Taag estuarium diende als natuurlijke haven voor de Romeinen, waardoor de stad
+                bij uitstek geschikt was voor het vervoer van de zuidelijke Romeinse provincies naar de noordelijke
+                provincies bijvoorbeeld Brittanica.
+            </p>
+            <p>
+                Olisipo was in handen van de Romeinen tot ongeveer het jaar 400 n.Chr.. De stad werd verovert door de
+                Alani, welke later weer verdreven werden door de Visigoden. De eerste echte militaire versterkingen
+                werden gedaan door dit volk. De Visigoden bleven voor ongeveer 400 jaar de baas van de stad, deze werd
+                later door de Noord-Afrikanse moslims veroverd.
+            </p>
+        </div>
+    </div>
+    <div class="islamic-lisbon">
+        <div class="islamic-lisbon-content">
+            <img src="/img/caliphate.webp" alt="Het kalifaat op het Iberische schiereiland">
+        </div>
+        <div class="islamic-lisbon-txt">
+            <h1 class="islamic-lisbon-txt-h1">Islamitisch Lissabon</h1>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse alias magni temporibus dolorem expedita
+                obcaecati aut numquam ratione! Dicta nisi reiciendis nam facere sint, aliquid ipsa atque aperiam alias
+                iste!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas sint id deleniti voluptates officiis
+                sapiente ad incidunt numquam tenetur, saepe eius accusamus in delectus nostrum odit ab aliquam tempora
+                fugit.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas sint id deleniti voluptates officiis
+                sapiente ad incidunt numquam tenetur, saepe eius accusamus in delectus nostrum odit ab aliquam tempora
+                fugit.
+            </p>
+        </div>
+    </div>
+    <script src="lazyload.js"></script>
+</body>
+
+</html>

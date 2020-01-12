@@ -1,0 +1,993 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #fefefe;
+}
+
+/* content */
+
+.sep {
+    margin-top: 50px;
+    margin-left: 175px;
+    margin-right: 175px;
+    color: lightgray;
+    opacity: 50%;
+}
+
+.sum {
+    list-style-type: square;
+    line-height: 20px;
+}
+
+@media screen and (max-width:768px) {
+    .sep {
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        opacity: 80%;
+    }
+}
+
+/* header */
+
+.header {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.header .header-img {
+    width: 100%;
+    height: 700px;
+}
+
+.header .header-img img {
+    height: 100%;
+    width: 100%;
+}
+
+.header-txt {
+    position: absolute;
+    top: 50%;
+    padding-left: 45%;
+    font-size: 70px;
+    opacity: 75%;
+}
+
+.intro-txt {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.intro-txt-h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.intro-txt-h2 {
+    font-size: 32px;
+    text-align: center;
+}
+
+.intro-txt-txtblck {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+@media screen and (max-width:768px) {
+    .header .header-img {
+        width: 100%;
+        height: 350px;
+    }
+    .header .header-img img {
+        height: 350px;
+        width: 100%;
+    }
+    .header-txt {
+        padding-left: 30%;
+    }
+    .intro-txt {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .intro-txt-txtblck {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .intro-txt-h1, .intro-txt-h2 {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+/* Items */
+
+/* subject = thames */
+
+/* item = location */
+
+.location {
+    margin-top: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+    height: 500px;
+}
+
+.location .location-txt {
+    float: right;
+    height: auto;
+    width: 50%;
+    padding-top: 75px;
+    padding-left: 40px;
+    padding-right: 20px;
+}
+
+.location .location-content {
+    float: left;
+    width: 50%;
+    height: 500px;
+}
+
+@media screen and (max-width:768px) {
+    .location {
+        height: 900px;
+    }
+    .location .location-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    .location .location-content {
+        width: 100%;
+    }
+}
+
+/* item = climate */
+
+.climate {
+    margin-top: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+    height: 350px;
+}
+
+.climate .climate-txt {
+    float: right;
+    height: auto;
+    width: 50%;
+    padding-left: 40px;
+    padding-right: 20px;
+}
+
+.climate .climate-content {
+    float: left;
+    width: 50%;
+}
+
+.graph-london {
+    position: relative;
+    padding-left: 40px;
+    height: 350px;
+}
+
+@media screen and (max-width:768px) {
+    .climate {
+        height: 730px;
+    }
+    .climate .climate-txt {
+        width: 100%;
+        padding-left: 10px;
+    }
+    .climate .climate-content {
+        width: 100%;
+        display: block;
+    }
+    .graph-london {
+        position: relative;
+        width: 350px;
+        height: 350px;
+        padding-left: 10px;
+    }
+}
+
+/* item = buildings */
+
+.buildings {
+    margin-top: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+    height: 500px;
+}
+
+.buildings .buildings-txt {
+    float: right;
+    height: 500px;
+    width: 50%;
+    padding-left: 40px;
+    padding-right: 20px;
+}
+
+.buildings .buildings-content {
+    float: left;
+    height: 500px;
+    width: 50%;
+}
+
+@media screen and (max-width:768px) {
+    .buildings {
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 1250px;
+    }
+    .buildings .buildings-txt {
+        width: 100%;
+        padding-left: 0px;
+    }
+    .buildings .buildings-content {
+        width: 100%;
+        padding-left: 0px;
+    }
+    .buildings .buildings-content #london {
+        width: 349px;
+    }
+}
+
+/* geology */
+
+.geology {
+    height: 175px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+.geology .geology-txt {
+    text-align: center;
+}
+
+.geology-txt {
+    margin-bottom: 30px;
+}
+
+.geology-txt-h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.geology-txt-h2 {
+    font-size: 32px;
+    text-align: center;
+}
+
+.estuary-expl {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 30px;
+}
+
+.estuary-expl-txt {
+    float: right;
+    width: 50%;
+    padding-left: 40px;
+    padding-right: 20px;
+}
+
+.estuary-expl-content {
+    float: left;
+    width: 50%;
+    height: 500px;
+}
+
+.basin {
+    width: 100%;
+    height: 500px;
+}
+
+.basin .basin-content {
+    width: 50%;
+    float: left;
+    height: 500px;
+}
+
+.basin .basin-txt {
+    width: 50%;
+    float: right;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+@media screen and (max-width:768px) {
+    .geology {
+        height: 275px;
+        margin-bottom: 5px;
+    }
+    .estuary-expl {
+        height: 1000px;
+    }
+    .estuary-expl-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    .estuary-expl-content {
+        width: 100%;
+        height: 250px;
+    }
+    .basin {
+        height: 900px;
+    }
+    .basin .basin-content {
+        width: 100%;
+        height: 350px;
+    }
+    .basin .basin-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+}
+
+/* history */
+
+/* intro */
+
+.history-txt {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    height: 250px;
+}
+
+.histroy-txt-h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.history-txt-h2 {
+    font-size: 32px;
+    text-align: center;
+}
+
+.history-txt-txtblck {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+@media screen and (max-width:768px) {
+    .history-txt {
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 575px;
+    }
+    .history-txt-txtblck {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .history-txt-h1, .history-txt-h2 {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+/* item = londinium */
+
+.londinium {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 30px;
+}
+
+.londinium-txt {
+    width: 50%;
+    float: right;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.londinium-content {
+    width: 50%;
+    float: left;
+}
+
+.londinium-content img {
+    width: 100%;
+    float: left;
+}
+
+@media screen and (max-width:768px) {
+    .londinium {
+        height: 800px;
+    }
+    .londinium-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .londinium-content {
+        width: 100%;
+    }
+}
+
+/* item = middle ages */
+
+.middleages {
+    width: 100%;
+    height: 670px;
+    margin-bottom: 30px;
+}
+
+.middleages-txt {
+    float: right;
+    width: 50%;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.middleages-content {
+    float: left !important;
+    width: 50%;
+    padding-left: 40px;
+}
+
+.middleages-content img {
+    height: 100%;
+}
+
+@media screen and (max-width:768px) {
+    .middleages {
+        height: 1100px;
+    }
+    .middleages-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+    .middleages-content {
+        width: 100%;
+        padding-left: 20px;
+    }
+    .middleages-content img {
+        height: 350px;
+    }
+}
+
+/* item = goldage */
+
+.goldage {
+    width: 100%;
+    height: 600px;
+    margin-bottom: 30px;
+}
+
+.goldage-txt {
+    float: right;
+    width: 50%;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.goldage-content {
+    float: left;
+    width: 50%;
+    padding-left: 100px;
+}
+
+@media screen and (max-width:768px) {
+    .goldage {
+        height: 1375px;
+    }
+    .goldage-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+    .goldage-content {
+        width: 100%;
+        padding-left: 0px;
+    }
+    .goldage-content img {
+        width: 100%;
+    }
+}
+
+/* item = case */
+
+/* case intro */
+
+.case {
+    width: 100%;
+    height: 300px;
+    padding-top: 10px;
+    margin-top: 30px;
+}
+
+.case-txt {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.case-txt-h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.case-txt-h2 {
+    font-size: 32px;
+    text-align: center;
+}
+
+.case, .case1, .case2 {
+    color: #fefefe;
+    background-color: #282a2b
+}
+
+@media screen and (max-width:768px) {
+    .case {
+        height: 600px;
+    }
+    .case-txt {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+/* case items */
+
+.case1 {
+    width: 100%;
+    height: 980px;
+    margin-bottom: 30px;
+}
+
+.case1-txt {
+    float: right;
+    width: 50%;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.case1-content {
+    float: left;
+    width: 50%;
+    height: 950px;
+}
+
+.case2 {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 30px;
+}
+
+.case2-txt {
+    float: right;
+    width: 50%;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+@media screen and (max-width:768px) {
+    .case1 {
+        height: 1850px;
+    }
+    .case1-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+    .case1-content {
+        width: 100%;
+        height: 500px;
+    }
+    .case2 {
+        height: 1200px;
+    }
+    .case2-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+    .case2-content {
+        width: 100%;
+        height: 500px;
+    }
+}
+
+/* item = "moderntimes" */
+
+.modern {
+    height: 500px;
+    width: 100%;
+}
+
+.modern-txt {
+    float: right;
+    width: 50%;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.modern-content {
+    padding-top: 40px;
+    padding-left: 40px;
+    float: left;
+    width: 50%;
+}
+
+.modern-picture img {
+    width: 100%;
+}
+
+.modern-sup {
+    line-height: 2px;
+}
+
+.modern-under {
+    font-size: 11px;
+    padding-left: 120px;
+}
+
+@media screen and (max-width:768px) {
+    .modern {
+        height: 1030px;
+    }
+    .modern-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+    .modern-content {
+        width: 100%;
+        padding-top: 0px;
+        padding-left: 15px;
+    }
+    .modern-under {
+        width: 100%;
+        padding-left: 0px;
+    }
+}
+
+/* subject = tagus */
+
+/* item = location */
+
+.lislocation {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 30px;
+}
+
+.lislocation-txt {
+    width: 50%;
+    float: right;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.lislocation-txt-h1 {
+    font-size: 40px;
+}
+
+.lislocation-content {
+    width: 50%;
+    float: left;
+    height: 500px;
+}
+
+@media screen and (max-width:768px) {
+    .lislocation {
+        height: 700px;
+    }
+    .lislocation-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+    .lislocation-content {
+        width: 100%;
+        height: 350px;
+    }
+}
+
+/* item = climate */
+
+.lisclimate {
+    width: 100%;
+    height: 350px;
+    margin-bottom: 30px;
+}
+
+.lisclimate-txt {
+    width: 50%;
+    float: right;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.lisclimate-txt-h1 {
+    font-size: 40px;
+}
+
+.lisclimate-content {
+    float: left;
+    width: 50%;
+    padding-left: 20px;
+}
+
+.graph-lisbon {
+    position: relative;
+}
+
+@media screen and (max-width:768px) {
+    .lisclimate {
+        height: 730px;
+    }
+    .lisclimate-content {
+        display: block;
+        width: 100%;
+        padding-left: 0px;
+    }
+    .lisclimate-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+    .graph-lisbon {
+        position: relative;
+        width: 100% !important;
+        height: 350px;
+        padding-left: 0px;
+    }
+}
+
+/* item = buildings lisbon */
+
+.lisbuildings {
+    height: 500px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.lisbuildings-content {
+    width: 50%;
+    height: inherit;
+    float: left;
+}
+
+#lisbon {
+    width: 100%;
+    float: left !important;
+}
+
+.lisbuildings-txt {
+    width: 50%;
+    float: left;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.lisbuildings-txt-h1 {
+    font-size: 40px;
+}
+
+@media screen and (max-width:768px) {
+    .lisbuildings {
+        height: 1000px;
+    }
+    .lisbuildings-content {
+        width: 100% !important;
+        height: 350px;
+    }
+    .lisbuildings-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+}
+
+/* item = estuary-expl */
+
+.lisbon-estuary-expl {
+    width: 100%;
+    height: 550px;
+    margin-bottom: 30px;
+}
+
+.lisbon-estuary-expl-txt {
+    float: right;
+    width: 50%;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.lisbon-estuary-expl-content {
+    float: left;
+    width: 50%;
+    height: inherit;
+}
+
+@media screen and (max-width:768px) {
+    .lisbon-estuary-expl {
+        height: 1100px;
+    }
+    .lisbon-estuary-expl-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+    .lisbon-estuary-expl-content {
+        width: 100%;
+        height: 350px;
+    }
+}
+
+/* item = riverbasin */
+
+.lisbonbasin {
+    height: 500px;
+    margin-bottom: 30px;
+}
+
+.lisbonbasin-content {
+    height: 500px;
+    width: 50%;
+    float: left;
+}
+
+.lisbonbasin-txt {
+    width: 50%;
+    float: right;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+@media screen and (max-width:768px) {
+    .lisbonbasin {
+        height: 950px;
+    }
+    .lisbonbasin-content {
+        width: 100%;
+        height: 350px;
+    }
+    .lisbonbasin-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+}
+
+/* History */
+
+/* item = early history */
+
+.early-history-lisbon {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 30px;
+}
+
+.early-history-lisbon-content {
+    width: 50%;
+    float: left;
+}
+
+.early-history-lisbon-content img {
+    width: 100%;
+    height: 500px;
+}
+
+.early-history-lisbon-txt {
+    width: 50%;
+    float: right;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+@media screen and (max-width:768px) {
+    .early-history-lisbon {
+        width: 100%;
+        height: 925px;
+        margin-bottom: 30px;
+    }
+    .early-history-lisbon-content {
+        width: 100%;
+    }
+    .early-history-lisbon-content img {
+        width: 100%;
+        height: 300px;
+    }
+    .early-history-lisbon-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+}
+
+.roman-lisbon {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 30px;
+}
+
+.roman-lisbon-content {
+    width: 50%;
+    float: left;
+}
+
+.roman-lisbon-content img {
+    width: 100%;
+    height: 100%;
+    padding-top: 35px;
+}
+
+.roman-lisbon-txt {
+    width: 50%;
+    float: right;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+@media screen and (max-width:768px) {
+    .roman-lisbon {
+        height: 1000px;
+    }
+    .roman-lisbon-content {
+        width: 100%;
+    }
+    .roman-lisbon-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+}
+
+.islamic-lisbon {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 30px;
+}
+
+.islamic-lisbon-content {
+    width: 50%;
+    float: left;
+}
+
+.islamic-lisbon-content img {
+    width: 700px;
+    height: 500px;
+}
+
+.islamic-lisbon-txt {
+    width: 50%;
+    float: right;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+}

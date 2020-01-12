@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="img/logo.webp" type="image/x-icon" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/javascript.css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    <!-- leaflet base -->
+    <script async src="/javascript/leaflet/thames/thames.js"></script>
+    <script async src="/javascript/leaflet/thames/london.js"></script>
+    <script async src="/javascript/leaflet/thames/riverbasin.js"></script>
+    <script async src="/javascript/leaflet/thames/oldmaplondon.js"></script>
+
+    <!-- Leaflet layers -->
+    <script async src="/javascript/leaflet/thames/londonbuildage.js"></script>
+    <script async src="/javascript/leaflet/thames/thamesriver.js"></script>
+    <script async src="/javascript/leaflet/thames/thamesestuaryoutline.js"></script>
+    <script async src="/javascript/leaflet/thames/thamesline.js"></script>
+
+    <!-- chartJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script async src="/javascript/chartjs/thames/rainlondon.js"></script>
+    
+    <title>Theems</title>
+</head>
+
+<body>
+    <div class="menu">
+        <a id="toggle" onClick="javascript: menu = document.querySelector('.menu'); menu.classList.toggle('open');">
+            Menu
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+                <path
+                    d='M22,6.5a1.5,1.5,0,0,0-1.061.439L12,15.879,3.061,6.939A1.5,1.5,0,0,0,.939,9.061l10,10a1.5,1.5,0,0,0,2.122,0l10-10A1.5,1.5,0,0,0,22,6.5Z'>
+                </path>
+            </svg>
+        </a>
+        <nav class="nav">
+            <ul>
+                <li class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.webp" alt="Logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="active">
+                    <a href="thames.html">Theems</a>
+                </li>
+                <li>
+                    <a href="tagus.html">Taag</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Introduction img -->
+    <div class="header">
+        <div class="header-img">
+            <img src="img/thames-map.webp" alt="Satelliet tekening van de Theems estuarium">
+        </div>
+        <div class="header-txt">
+            Theems
+        </div>
+    </div>
+    <!-- Introduction text -->
+    <div class="intro-txt">
+        <h1 class="intro-txt-h1">Quickfacts</h1>
+        <h2 class="intro-txt-h2">Londen en Theems, een onafscheidelijk duo</h2>
+        <p class="intro-txt-txtblck">
+            De Theems is de bekende rivier die door Londen, de hoofdstad van Engeland en Groot-Brittanië, heenloopt en
+            vele verschillende bekende gebouwen zijn
+            gevestigd aan de
+            Theems
+            zoals: The Big Ben, Palace of Westminster, the London Eye en The London Tower. Welke misschien nog wel het
+            meest iconisch is
+            voor London is de Tower Bridge over de rivier heen.
+        </p>
+        <p class="intro-txt-txtblck">
+            Al sinds de stichting van Londen door de Romeinen, toen Londinium genoemd, was de rivier een levensader voor
+            de stad. De
+            Romeinen gebruikte de rivier al voor de aanvoer van goederen en mensen over water naar de stad. In de
+            middeleeuwen werd
+            de rivier nog belangrijker voor handel en het besturen van het wereldrijk in de latere jaren.
+        </p>
+    </div>
+    <!-- item = location -->
+    <div class="location">
+        <div class="location-content">
+            <div id="thames"></div>
+        </div>
+        <div class="location-txt">
+            <h1 class="location-txt-h1">Ligging</h1>
+            <p>
+                De Theems is een 330 kilometer lange rivier die uitmondt in de Noordzee. Deze rivier begint bij de
+                <em>Thames Head</em>, welke grote delen van het jaar droog staat. Het debiet van de rivier bedraagt
+                bij de vloedlijn, nabij Teddington gemiddeld 53m<sup>3</sup> per seconde.
+            </p>
+            <p>
+                Het estuarium ligt ongeveer op de volgende coördinaten: <h2 class="h2-coordinates">51°29'43.7"N
+                    0°43'15.0"O</h2> Het estuarium loopt voor ongeveer 100 kilometer door voordat het overgaat in de
+                Noordzee.
+            </p>
+        </div>
+    </div>
+    <!-- item = climate -->
+    <div class="climate">
+        <div class="climate-content">
+            <div class="graph-london">
+                <canvas id="rainlondon"></canvas>
+            </div>
+        </div>
+        <div class="climate-txt">
+            <h1 class="climate-txt-h1">Klimaat</h1>
+            <p>
+                Het klimaat van het estuarium is volgens de klimaatclassificatie van Köppen-Geiger <em>Cfb</em>, dit
+                houdt in dat het een zeeklimaat betreft.
+                Er zijn geen droge perioden in deze gebieden, er valt minimaal meer dan 30mm regen verspreid over het
+                hele jaar en de warmste maand heeft een gemiddelde maandtemperatuur van minder dan 22°C.
+            </p>
+            <p>
+                De maand oktober is de natste maand voor het gebied met een gemiddelde neerslag van 68,5 mm, de droogste
+                maand voor het gebied in februari.
+                In vergelijking met Nederland (Amsterdam) valt er weinig neerslag: in de maand oktober valt er in
+                Nederland (Amsterdam) 89,6 mm regen.
+            </p>
+        </div>
+    </div>
+    <!-- item = buildings -->
+    <div class="buildings">
+        <div class="buildings-content">
+            <div id="london"></div>
+        </div>
+        <div class="buildings-txt">
+            <h1 class="buildings-txt-h1">Gebouwen in Londen</h1>
+            <p>
+                Dat Londen een zeer oude stad is, kan onder meer opgemaakt worden door de bouwjaren van verschillende
+                gebouwen
+                te bekijken. Door de grote brand van 1666 in Londen zijn er weinig gebouwen over uit de periode van
+                voor deze
+                brand. Voor 1666 waren de meeste gebouwen gemaakt van hout, waardoor deze zijn verwoest bij deze zeer
+                destructieve brand. De gebouwen na deze periode werden gemaakt van solide stenen, hierdoor is een groot
+                deel
+                van de oude gebouwen bewaard gebleven.
+                <br><br>
+                <em>Notitie: de bouwjaren zijn gegeneraliseerd voor het gehele gebied.</em>
+            </p>
+            <p>
+                Op de kaart zijn de bouwjaren van geheel '<em>Greater Londen</em>' te zien, dit is het hele gebied wat
+                onder Londen gerekend wordt, maar niet de stad Londen zelf bedraagt. Op de kaart is onder meer te zien
+                dat:
+                <ul class="sum">
+                    <li class="sum1">Londen is een concentrisch, vanuit het midden (met centrum), gebouwde stad. Dit
+                        houdt in dat er gebouwd is vanuit het
+                        midden van de stad naar de buitenranden van de stad.</li>
+                    <li class="sum1">Een groot deel van Londen is gebouwd voor het jaar 1900, hier kan uit worden
+                        opgemaakt dat de stad nog steeds uit relatief oude gebouwen bestaat.</li>
+                    <li class="sum1">Langs de oevers van de Theems, in het centrum van Londen, is het overgrote deel van
+                        de gebouwen recent gebouwd (tussen de jaren 2005 en 2009). Hier worden oude havens en gebouwen
+                        vervangen door nieuwe, moderne gebouwen en complexen.</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <hr class="sep" />
+
+    <!-- geology -->
+    <div class="geology">
+        <div class="geology-txt">
+            <h1 class="geology-txt-h1">Natuurlijke eigenschappen</h1>
+            <h2 class="geology-txt-h2">Ontstaanswijze en het stroomgebied</h2>
+        </div>
+    </div>
+    <div class="estuary-expl">
+        <div class="estuary-expl-content">
+            <img class="lazyload" src="img/Estuarysatellite.webp" width="100%" height="100%" alt="luchtfoto estuarium">
+        </div>
+        <div class="estuary-expl-txt">
+            <h1 class="estuary-expl-h1">Wat is een estuarium?</h1>
+            <p>
+                Het Theems estuarium is een semi-ingesloten waterlichaam dat een open verbinding heeft met de zee
+                en waar het zoute water verdund is met zoet water wat afkomstig is van het land. Een estuarium kan ook
+                aangeduid worden als een <em>verdronken rivierdal</em>. Het mixen van het zoete en zoute water is één
+                van
+                de eisen die gesteld worden bij de aanduiding van een estuarium.
+            </p>
+            <p>
+                Het rivierdal is onder water komen te staan in de laatste ijstijd, de rivier heeft in de tijd dat de
+                zeespiegel een stuk lager was ingesneden in het land, dit heeft ervoor gezorgd dat er een rivierdal is
+                ontstaan. Dit rivierdal is onderwater komen te staan dat het klimaat over de hele wereld warmer werd en
+                de zeespiegel weer begon te stijgen.
+            </p>
+            <p>
+                De rivier komt uit in het estuarium en het water van de rivier is zoet water, er zijn weinig mineralen
+                aanwezig die het water zout kunnen maken. Dit water komt terecht in het zoute zeewater, waardoor het
+                water in het water in een estuarium brak (zoet en zout gemixt) is.
+            </p>
+            <p>
+                Het stroomgebied wordt natuurlijk bepaald door natuurlijk gevormde barrières zoals:
+                <ul class="sum">
+                    <li>Niet-waterdoorlatende grondlagen</li>
+                    <li>Bergen</li>
+                    <li>De hoek waarin natuurlijke afzettingen zijn gevormd</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+    <div class="basin">
+        <div class="basin-content">
+            <div id="riverbasin"></div>
+        </div>
+        <div class="basin-txt">
+            <h1 class="basin-h1">Stroomgebied van de Theems</h1>
+            <p>
+                Het stroomgebied van de Theems is één van de grootste van Engeland en heeft een oppervlakte van 16.000
+                km<sup>2</sup>.
+            </p>
+            <p>
+                In de kaart zijn alle stroomgebieden weergegeven in het Verenigd Koninkrijk, deze zijn aangegeven met
+                rode lijnen.
+                De rode lijn die rond de Theems is weergegeven geeft het stroomgebied van de Theems aan.
+            </p>
+            <p>
+                Een stroomgebied is een gebied waar de neerslag zich verzamelt en afvoert naar een gemeenschappelijke
+                uitlaatpunt zoals
+                een rivier. Het stroomgebied omvat al het oppervlaktewater van de neerslag, het smelten van sneeuw en
+                kleine
+                waterlichamen zoals kleine meertjes die in de richting lopen van het gemeenschappelijke uitlaatpunt. Het
+                grondwater dat
+                stroomt richting het uitlaatpunt wordt ook meegerekend bij het stroomgebied.
+            </p>
+        </div>
+    </div>
+
+    <hr class="sep" />
+
+    <!-- history -->
+    <div class="history-txt">
+        <h1 class="histroy-txt-h1">Geschiedenis van Londen en de Theems</h1>
+        <h2 class="history-txt-h2">Van de Kelten en Romeinen tot de hedendaagse Britten</h2>
+        <p class="history-txt-txtblck">
+            Londen, de hoofdstad van Engeland en het Verenigd Koninkrijk, is één van de oudste grote steden ter wereld
+            en is ongeveer twee millennia geleden gebouwd door de Romeinen. In de huidige tijd is Londen de grootste
+            metropolis en het economisch hart van Engeland en het Verenigd Koninkrijk.
+        </p>
+        <p class="history-txt-txtblck">
+            Londen is sinds het oude Londinium al een belangrijk knooppunt van de zee naar het achterland, dit mede door
+            haar
+            ligging vlakbij het estuarium en de Theems die het stroomopwaarts het achterland in gaat.
+        </p>
+    </div>
+    <!-- 0 - 1000 -->
+    <div class="londinium">
+        <div class="londinium-content">
+            <img class="lazyload" src="/img/londinium.webp" alt="Londinium">
+        </div>
+        <div class="londinium-txt">
+            <h1 class="londinium-txt-h1">Londinium</h1>
+            <p>
+                Londinium was de eerste grote nederzetting op de plek van hedendaags Londen. De stad werd gebouwd op
+                twee heuvels, die
+                boven het omringende landschap uitkwamen. Vanuit deze nederzetting werd een brug naar het zuiden over de
+                Theems heen
+                gebouwd.
+                <br><br>
+                In de tweede eeuw na Christus werd de stad de officiële hoofdstad van de Romeine provincie Brittanica,
+                de hoofdstad was
+                in eerste instantie gevestigd in het huidige Colchester, of hoe het in de Romeinse tijd heette:
+                Camulodunum.
+
+            </p>
+            <p>
+                Vanaf de vijfde eeuw begon Londinium, samen met het Romeinse rijk, langzaamaan in verval te raken. Rond
+                het jaar 457 na
+                Christus werd de stad grotendeels verlaten door de oude bewoners en raakte de stad volledig in verval en
+                werd niet meer
+                hersteld.
+            </p>
+            <p>
+                Vanaf de vijfde eeuw begon Londinium, samen met het Romeinse rijk, langzaamaan in verval te raken. Rond
+                het jaar 450 na
+                Christus werd de stad grotendeels verlaten door de oude bewoners en raakte de stad volledig in verval en
+                werd niet meer
+                hersteld.
+            </p>
+        </div>
+    </div>
+    <!-- 1000 - 1500 -->
+    <div class="middleages">
+        <div class="middleages-content">
+            <img class="lazyload" src="/img/toweroflondon.webp" alt="Tower of London">
+        </div>
+        <div class="middleages-txt">
+            <h1 class="middleages-txt-h1">Middeleeuws Londen</h1>
+            <p>
+                Tussen het jaar 450 en het jaar 1000 werd de Londen geregeerd door Angelsaksische koningen. De eerste
+                Christelijke
+                Angelsaksische koning, Ethelbert de koning van Kent, stichtte St. Paul's Cathedral. In de
+                negende eeuw werd Londen regelmatig
+                geplunderd door de Vikingen. Nadat de Vikingen verslagen werden werd Londen, mede door de toenemende
+                handel, een welvarende stad. Tot het jaar 1066, toen de laatste Angelsaksische koning Edward the
+                Confesser kinderloos stierf volgde er een opvolgingsstrijd. Willem de Verover (<em>William the
+                    Conqueror</em>)
+                veroverde Engeland en zijn tegenstander werd verslagen in <em>the Battle of Hastings</em> en werd
+                daardoor de nieuwe Engelse koning.
+            </p>
+            <p>
+                Willem de Veroveraar liet <em>The White Tower</em> bouwen als verdedingswerk in de stad, nadat dit
+                verschillende keren werd uitgebouwd groeide dit uit tot The White Tower uit tot de <em>Tower of
+                    Londen</em>. De zoon van Willem de Veroveraar legde de fundering neer voor het latere Palace of
+                Westminster.
+            </p>
+            <p>
+                In de dertiende eeuw vond een van de meest belangrijke momenten in de Britse geschiedenis plaats:
+                ondertekening van <em>de Magna Carta</em>. De toenmalige koning van Engeland, Jan zonder Land, trok
+                volgens de edelen
+                teveel macht naar zich toe, onder dwang hebben zij de koning uiteindelijk de Magna Carta laten tekenen.
+                Dit had grote gevolgen voor de macht van de koning welke ingeperkt werd, daarnaast garandeerde het de
+                politieke vrijheden van edelen. Dit document staat voor de Engelse vrijheid, recht en democratie. De
+                Magna Carta
+                maakt nog steeds deel uit van het huidig Engels wetboek.
+            </p>
+        </div>
+    </div>
+    <!-- 1500 - 1700 -->
+    <div class="goldage">
+        <div class="goldage-content">
+            <img class="lazyload" src="/img/henryviii.webp" alt="Henry VIII">
+        </div>
+        <div class="goldage-txt">
+            <h1 class="goldage-txt-h1">De Londense Gouden Eeuw</h1>
+            <p>
+                Vanaf het begin van de zestiende eeuw begon de stad Londen weer te floreren en werd de stad weer
+                welvarend, zo waren er
+                41 ambachtsgilden in de stad aanwezig. Dit groeide uit dat in het midden van de zestiende eeuw de handel
+                in Londen flink
+                toenam, waardoor er meer welvaart in de stad was. In dezelfde tijd groeide de bevolking van Londen van
+                meer dan 100.000
+                naar meer dan 200.000, deze mensen konden vrijwel allemaal gehuisvest worden. Deze mensen konden
+                gehuisvest worden door
+                de religieuze reformatie (1536) die in gang gezet werd door Hendrix VIII. Hendrik wilde van zijn
+                toenmalige vrouw
+                Catharina van Aragon scheiden, maar dit werd niet toegestaan door de kerk. Hendrik VIII besloot uit de
+                kerk te stappen
+                en een eigen kerk op te richten: de Anglicaanse Kerk en de koning van Engeland werd het hoofd van de
+                kerk.
+                De voormalige
+                kerk moest al haar bezittingen afstaan in Engeland en Londen, waardoor er plek vrijkwam voor nieuwe
+                woningen binnen
+                Londen.
+            </p>
+            <p>
+                Aan het begin van de zeventiende eeuw telde Londen ongeveer 200.000 inwoners, hiermee behoorde de stad
+                tot een van de
+                grootste steden van Europa. In deze periode maakte Londen en Engeland een grote culturele bloei door met
+                schrijvers en
+                wetenschappers als William Shakespeare en Ben Jonson. De nieuwe koning, Jacobus I, had een grote
+                bijdrage geleverd aan
+                de Londense bevolking door nieuwe watervoorziening voor de stad aan te leggen, hierdoor werd hij een
+                zeer populaire
+                koning. De tweede helft van de zeventiende eeuw zou voor Londen in het teken staan van een grote
+                pestepidemie, die
+                ongeveer 100.000 slachtoffers eiste, ‘<em>The Great Fire of Londen</em>’ en oorlog met de Republiek der
+                Verenigde
+                Nederlanden.
+            </p>
+        </div>
+    </div>
+
+    <hr class="sep" />
+
+    <!-- case -->
+    <!-- case intro -->
+    <div class="case">
+        <div class="case-txt">
+            <h1 class="case-txt-h1">The Great Fire of London</h1>
+            <h2 class="case-txt-h2">Een grote ramp en een zegening tegelijkertijd</h2>
+            <p class="case-txt-txtblck">
+                <em>The Great Fire of London</em> was voor de Londenaren een grote ramp, ongeveer 100.000 mensen
+                waren
+                hun huis kwijtgeraakt
+                het centrum van Londen moest opnieuw opgebouwd worden en er waren verschillende doden gevallen bij
+                deze
+                verwoestende brand.
+                Deze brand had ook een keerzijde: mogelijke plaatsen waar de pest nog bestond waren verbrand en deze
+                kon niet meer terugkomen. Enkele jaren voor de brand heerste er een grote pestepidemie in Londen die
+                een
+                groot aantal slachtoffers heeft geëist en de ziekte was nog niet volledig weg uit de stad. Na de
+                brand was deze ziekte
+                volledig weg uit de stad en kon er opnieuw begonnen worden.
+                <br><br>
+                Maar hoe en waar is de brand ontstaan die de stad bijna volledig in de as legde?
+            </p>
+        </div>
+    </div>
+    <div class="case1">
+        <div class="case1-content">
+            <div id="oldmap"></div>
+        </div>
+        <div class="case1-txt">
+            <h1 class="case1-txt-h1">Pudding Lane</h1>
+            <p>
+                Op 1 september 1666 in de avond was de bakker Thomas Farynor bezig met zijn dagelijkse routine, hij
+                doofde alle vuren van alle ovens in zijn woning maar vergat één vuur te doven. Zijn bakkerij was
+                gevestigd aan Pudding Lane, vlakbij de London bridge. De zomer van 1666 was
+                een droge zomer, waardoor de houten gebouwen uitgedroogd waren en waren daardoor zeer vatbaar voor
+                vlammen. Het vuur uit de oven sprong mogelijk over op een stapel hooi of stro en greep daarna
+                langzaam om zich heen. Er was een sterke wind, deze zorgde ervoor dat het vuur over kon slaan
+                naar verschillende huizenblokken.
+            </p>
+            <p>
+                Het vuur was gauw onhandelbaar geworden en de stad werd daardoor compleet verlamd, het vuur kon niet
+                gedoofd worden. In een poging om het vuur te doven zijn huizen die nog niet verbrand waren tot
+                ontploffing gebracht met springstof, echter kon dit ook niet ervoor zorgen dat het vuur zich bleef
+                verspreiden.
+            </p>
+            <p>
+                Het vuur raazde door het oude, van hout gemaakte, Londen heen en legde alles in de as wat er in de
+                weg kwam. De temperatuur liep op sommige plaatsen tot 1200ºC en kon zelfs aardewerk laten smelten.
+                Na vijf dagen was het vuur uitgeraasd door een tekort aan brandstof, hierna werd duidelijk hoeveel
+                schade de brand had aangericht.
+            </p>
+            <h1 class="case2-txt-h1">Na de brand..</h1>
+            <h3>Schade</h3>
+            <p>
+                Nadat het vuur uitgeraasd was, werd de schade duidelijk: 80% van de gebouwen in Londen was in
+                vlammen opgegaan, hierbij behoren ook onder meer 87 kerken, waaronder de oude St. Paul's Cathedral
+                die Londen rijk was
+                Opvallend genoeg had de brand weinig mensen gedood, naar alle waarschijnlijkheid zes mensen.
+            </p>
+            <h3>Nieuwe gebouwen</h3>
+            <p>
+                De brand, ondankdanks dat het ongeveer 13000 gebouwen in de as heeft gelegd, heeft er voor gezorgd
+                dat Londen zich kon gaan ontwikkelen. De oude, kleine en vooral van slechte kwaliteit gemaakte
+                huizen waren weggevaagd door de brand, hierdoor konden nieuwe van steen gemaakte gebouwen teruggezet
+                worden.
+            </p>
+            <h3>De pest</h3>
+            <p>
+                De brand was naast dat er nieuwe gebouwen neergezet konden worden, ook goed voor de uitroeiing van
+                de pest:
+                de brand had vele ratten die in de stad leefde verbrand. Door het verbranden van deze ratten, kon de
+                builenpest
+                die door deze ratten verspreid werd niet meer verspreid worden. Daarnaast heeft de brand ook gezorgd
+                voor de eerste polissen in de wereld, mensen konden zich verzekeren tegen onder andere schade door
+                brand.
+            </p>
+        </div>
+    </div>
+    <!-- Insert gif -->
+
+    <hr class="sep" />
+
+    <!-- modern -->
+    <div class="modern">
+        <div class="modern-content">
+            <div class="modern-picture">
+                <img class="lazyload" src="img/britishempire.webp" alt="Londinium">
+            </div>
+            <p class="modern-under">
+                Alle gekleurde gebieden zijn ooit onderdeel geweest van het Britse Koninkrijk
+            </p>
+        </div>
+        <div class="modern-txt">
+            <h1 class="modern-txt-h1">De zetel van een wereldrijk</h1>
+            <p>
+                Tussen het jaar 1500 en 1600 begon het Britse Koninkrijk zich overzees uit te breiden en vanaf 1600
+                begin dit grootse vormen aan te nemen. Grote delen van de <em>Nieuwe Wereld</em> werden gekoloniseerd
+                door de Britten en/of door oorlog overgenomen van andere landen. In de 18<sup class="modern-sup">e</sup>
+                eeuw was
+                Noord-Amerika, op Quebec na, in handen van de Britten. Dit wordt ook wel het Eerste Britse Rijk genoemd.
+                Tot 1783 bleef het huidige Verenigde Staten in handen van Britten, totdat de Verenigde Staten zich
+                onafhankelijk van Britse Rijk hadden gevochten.
+            </p>
+            <p>
+                Na het verliezen van de Verenigde Staten wordt de tijd van het Tweede Britse Rijk ingeluid. Waar het
+                Eerste Britse Rijk vooral draaide om bescherming van handel, draaide het in het Tweede Britse Rijk
+                voornamelijk om economisch liberalisme, oftewel economische vrijheid. De blik van het Britse Rijk was
+                na het verliezen van de Verenigde Staten niet meer gericht op de <em>Nieuwe Wereld</em>, maar op Azië en
+                Afrika. Zo werd de Kaap Kolonie verovert op de Zeven Verenigde Nederlanden, die op dat moment de oorlog
+                hadden verloren van Napoleon.
+            </p>
+            <p>
+                Londen was de hoofdstad van het Britse Rijk en was hierdoor één van de belangrijkste steden ter wereld.
+                Het was het economisch hart van het Britse Rijk en vele schepen kwamen ook aan in Londen, vooral voor
+                het bedrijven van handel. Daarnaast was Londen de belangrijkste stad van de wereld doordat het de
+                hoofdstad van het Britse Rijk was en daar belangrijke beslissingen genomen werden die ingrijpend konden
+                zijn voor het gehele Britse Rijk.
+            </p>
+        </div>
+    </div>
+    <!-- lazyload -->
+    <script src="lazyload.js"></script>
+</body>
+
+</html>
