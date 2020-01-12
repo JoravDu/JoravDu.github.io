@@ -9,7 +9,7 @@ map.scrollWheelZoom.disable();
 map.removeControl(map.zoomControl);
 
 var bounds = [[-26.5, -25], [1000, 1000]];
-var image = L.imageOverlay('img/London1666.jpg', bounds).addTo(map);
+var image = L.imageOverlay('img/london1666.webp', bounds).addTo(map);
 
 map.fitBounds(bounds);
 
@@ -24,7 +24,7 @@ var xy = function (x, y) {
 
 
 
-var marker = xy([665, 490]);
+var marker = xy([660, 475]);
 
 // var marker2 = xy([656, 483], {
 //     iconUrl: 'javascript/leaflet/markers/themonumentlondon.svg',
