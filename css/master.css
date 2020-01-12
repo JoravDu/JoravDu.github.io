@@ -8,6 +8,11 @@ body {
 
 /* content */
 
+.about-txt {
+    margin-top: 150px;
+    width: 100%;
+}
+
 .sep {
     margin-top: 50px;
     margin-left: 175px;
