@@ -19,6 +19,28 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+
+    <!-- Lazyload -->
+    <script async src="javascript//lazyload.js"></script>
+
+    <!-- leaflet base -->
+    <script async defer src="javascript/leaflet/thames/thames.js"></script>
+    <script async src="javascript/leaflet/thames/london.js"></script>
+    <script async src="javascript/leaflet/thames/riverbasin.js"></script>
+    <script async src="javascript/leaflet/thames/oldmaplondon.js"></script>
+
+    <!-- Leaflet layers -->
+    <script async src="javascript/leaflet/thames/londonbuildage.js"></script>
+    <script async src="javascript/leaflet/thames/thamesriver.js"></script>
+    <script async src="javascript/leaflet/thames/thamesestuaryoutline.js"></script>
+    <script async src="javascript/leaflet/thames/thamesline.js"></script>
+
+    <!-- chartJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script async src="javascript/chartjs/thames/rainlondon.js"></script>
 
     <!-- Meta title and description -->
     <title>Theems van de Kelten en Romeinen tot de hedendaagse Britten</title>
@@ -179,7 +201,8 @@
     </div>
     <div class="estuary-expl">
         <div class="estuary-expl-content">
-            <img class="lazyload" data-src="img/Estuarysatellite.webp" width="100%" height="100%" alt="luchtfoto estuarium">
+            <img class="lazyload" data-src="img/Estuarysatellite.webp" width="100%" height="100%"
+                alt="luchtfoto estuarium">
         </div>
         <div class="estuary-expl-txt">
             <h1 class="estuary-expl-h1">Wat is een estuarium?</h1>
@@ -495,30 +518,6 @@
             </p>
         </div>
     </div>
-
-    <!-- Leaflet -->
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-        crossorigin=""></script>
-
-    <!-- Lazyload -->
-    <script async src="javascript//lazyload.js"></script>
-    
-    <!-- leaflet base -->
-    <script async defer src="javascript/leaflet/thames/thames.js"></script>
-    <script async src="javascript/leaflet/thames/london.js"></script>
-    <script async src="javascript/leaflet/thames/riverbasin.js"></script>
-    <script async src="javascript/leaflet/thames/oldmaplondon.js"></script>
-    
-    <!-- Leaflet layers -->
-    <script async src="javascript/leaflet/thames/londonbuildage.js"></script>
-    <script async src="javascript/leaflet/thames/thamesriver.js"></script>
-    <script async src="javascript/leaflet/thames/thamesestuaryoutline.js"></script>
-    <script async src="javascript/leaflet/thames/thamesline.js"></script>
-    
-    <!-- chartJS -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script async src="javascript/chartjs/thames/rainlondon.js"></script>
 </body>
 
 </html>
