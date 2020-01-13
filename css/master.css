@@ -1210,6 +1210,7 @@ body {
 .case1-content iframe {
     height: 100%;
     width: 100%;
+    margin-left: 15px;
 }
 
 .case2 {
