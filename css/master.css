@@ -10,6 +10,23 @@ body {
     font-size: 15px;
 }
 
+footer {
+    margin-top: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+footer .left {
+    float: left;
+    width: 50%;
+}
+
+footer .right {
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+
 /* content */
 
 .about-txt {
@@ -1148,48 +1165,6 @@ h1, h2, h3 {
     }
 }
 
-/* item = modern lisbon */
-
-.early-modern-lisbon {
-    width: 100%;
-    height: 500px;
-    margin-bottom: 30px;
-}
-
-.early-modern-lisbon-content {
-    width: 50%;
-    float: left;
-}
-
-.early-modern-lisbon-content img {
-    width: 100%;
-    height: 100%;
-}
-
-.early-modern-lisbon-txt {
-    width: 50%;
-    float: right;
-    padding-left: 40px;
-    padding-right: 20px;
-    padding-top: 10px;
-}
-
-@media screen and (max-width:768px) {
-    .early-modern-lisbon {
-        width: 100%;
-        height: 1000px;
-    }
-    .early-modern-lisbon-content {
-        width: 100%;
-    }
-    .early-modern-lisbon-txt {
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 10px;
-    }
-}
-
 /* item = case */
 
 .lisbon-case {
@@ -1273,4 +1248,63 @@ h1, h2, h3 {
         width: 100%;
         height: 500px;
     }
+}
+
+/* item = modern lisbon */
+
+.modern-lisbon {
+    width: 100%;
+    height: 500px;
+    margin-top: 30px;
+}
+
+.modern-lisbon-content {
+    width: 50%;
+    float: left;
+}
+
+.modern-lisbon-content img {
+    width: 100%;
+    height: 100%;
+}
+
+.modern-lisbon-txt {
+    width: 50%;
+    float: right;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+@media screen and (max-width:768px) {
+    .modern-lisbon {
+        width: 100%;
+        height: 1000px;
+    }
+    .modern-lisbon-content {
+        width: 100%;
+    }
+    .modern-lisbon-txt {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+}
+
+/* Resources page */
+
+.resources {
+    /* width: 100%; */
+    margin-top: 130px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.resources .p-resources {
+    text-align: justify;
+}
+
+.ul-resources {
+    list-style-type: none;
 }
