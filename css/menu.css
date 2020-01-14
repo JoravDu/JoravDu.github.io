@@ -28,7 +28,7 @@
     position: relative;
     padding: 8px 25px;
     text-decoration: none;
-    color: #42429C;
+    color: #CCD3E6;
     font-size: 24px;
     font-weight: 300;
 }
@@ -40,7 +40,7 @@
 
 .menu ul li.active a {
     text-decoration: underline;
-    color: #CCD3E6;
+    color: #42429C;
     /* color:red; */
 }
 
