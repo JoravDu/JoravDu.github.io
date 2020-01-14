@@ -1,6 +1,12 @@
 window.addEventListener('load', (event) => {
     // basemaps
-    var Stamen_Tiles = L.tileLayer("https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg"),
+    var Stamen_Toner = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
+        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        subdomains: 'abcd',
+        minZoom: 0,
+        maxZoom: 20,
+        ext: 'png'
+    }),
         mapboxSatellite = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             maxZoom: 18,
             id: 'mapbox/satellite-v9',
@@ -10,14 +16,14 @@ window.addEventListener('load', (event) => {
     var map = L.map('london', {
         center: [51.464130, 0.366754],
         zoom: 9,
-        layers: [Stamen_Tiles]
+        layers: [Stamen_Toner]
     });
 
     map.touchZoom.disable();
     map.scrollWheelZoom.disable();
 
     var baseMaps = {
-        "Wereldkaart": Stamen_Tiles,
+        "Wereldkaart": Stamen_Toner,
         "Satelliet" : mapboxSatellite
     };
 

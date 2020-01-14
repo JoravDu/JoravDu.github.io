@@ -1,11 +1,15 @@
 window.addEventListener('load', (event) => {
 
-    var Stamen_Tiles = L.tileLayer("https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg");
+    var Stamen_Toner = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
+        minZoom: 0,
+        maxZoom: 20,
+        ext: 'png'
+    });
 
     var map = L.map('tagus', {
         center: [38.7888169, -8.8160449],
         zoom: 10,
-        layers: [Stamen_Tiles]
+        layers: [Stamen_Toner]
     });
 
     map.touchZoom.disable();
@@ -13,7 +17,7 @@ window.addEventListener('load', (event) => {
 
 
     var baseMaps = {
-        "Wereldkaart": Stamen_Tiles
+        "Wereldkaart": Stamen_Toner
     };
 
     L.control.layers(baseMaps).addTo(map);

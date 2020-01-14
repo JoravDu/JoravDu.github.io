@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Open+Sans+Condensed:300&display=swap');
 * {
     box-sizing: border-box;
 }
@@ -24,6 +25,15 @@ body {
 .sum {
     list-style-type: square;
     line-height: 20px;
+}
+
+p, .lisbuildings-txt ul {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 16px;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
 }
 
 @media screen and (max-width:768px) {
@@ -75,7 +85,7 @@ body {
 }
 
 .intro-txt-h1 {
-    font-size: 40px;
+    font-size: 80px;
     text-align: center;
 }
 

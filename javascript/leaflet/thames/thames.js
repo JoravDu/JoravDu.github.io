@@ -1,25 +1,29 @@
 window.addEventListener('load', (event) => {
 
     // basemaps
-    var Stamen_Tiles = L.tileLayer("https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg"),
-        mapboxSatellite = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-            maxZoom: 18,
-            id: 'mapbox/satellite-v9',
-            accessToken: 'pk.eyJ1Ijoiam9yYW52ZHVpbiIsImEiOiJjam53d2k5a3EwZzdhM3FucTByaDRrMzQwIn0.sCAmQZysagzU2t82TJiRkw'
+    var Stamen_Toner = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
+	minZoom: 0,
+	maxZoom: 20,
+	ext: 'png'
+    }),
+    mapboxSatellite = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        maxZoom: 18,
+        id: 'mapbox/satellite-v9',
+        accessToken: 'pk.eyJ1Ijoiam9yYW52ZHVpbiIsImEiOiJjam53d2k5a3EwZzdhM3FucTByaDRrMzQwIn0.sCAmQZysagzU2t82TJiRkw'
     });
 
 
     var map = L.map('thames', {
         center: [51.464130, 0.366754],
         zoom: 9,
-        layers: [Stamen_Tiles]
+        layers: [Stamen_Toner]
     });
 
     map.touchZoom.disable();
     map.scrollWheelZoom.disable();
 
     var baseMaps = {
-        "Wereldkaart": Stamen_Tiles,
+        "Wereldkaart": Stamen_Toner,
         "Satelliet" : mapboxSatellite
     };
 
