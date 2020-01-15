@@ -1193,7 +1193,7 @@ h1, h2, h3 {
 
 @media screen and (max-width:768px) {
     .lisbon-case {
-        height: 600px;
+        height: 520px;
     }
     .lisbon-case-txt {
         margin-left: 10px;
@@ -1221,7 +1221,7 @@ h1, h2, h3 {
 .lisbon-case1-content {
     float: left;
     width: 50%;
-    height: 950px;
+    height: 99%;
 }
 
 .lisbon-case1-content iframe {
@@ -1234,19 +1234,20 @@ h1, h2, h3 {
     .lisbon-case1 {
         height: 1750px;
     }
-    .lisbon-case1-content iframe {
-        width: 350px;
+    .lisbon-case1-content {
+        width: 100%;
         height: 500px;
+    }
+    .lisbon-case1-content iframe {
+        width: 100%;
+        height: 100%;
+        margin-left: 0px;
     }
     .lisbon-case1-txt {
         width: 100%;
         padding-left: 10px;
         padding-right: 10px;
         padding-top: 10px;
-    }
-    .lisbon-case1-content {
-        width: 100%;
-        height: 500px;
     }
 }
 
