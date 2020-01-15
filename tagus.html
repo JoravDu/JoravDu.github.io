@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/javascript.css">
 
+    <!-- Lazyload -->
+    <script async src="javascript/lazyload.js"></script>
+
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -36,13 +39,13 @@
     <script async src="javascript/leaflet/tagus/tagusline.js"></script>
 
     <!-- ChartJS -->
-    <script async src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script async src="javascript/chartjs/tagus/rainlisbon.js"></script>
 
     <!-- Meta title and description -->
-    <title>Taag van de Feniciërs tot de hedendaagse Portugezen</title>
+    <title>Taag van de Feniciërs tot de moderne Portugezen</title>
     <meta name="description"
-        content="Taag en Lissabon door de jaren heen uitgelegd. Bekijk hier de belangrijkste gebeurtenissen en feiten door de jaren heen.">
+        content="Taag en Lissabon door de jaren heen uitgelegd. Bekijk hier de belangrijkste gebeurtenissen en feiten van dit estuarium.">
 </head>
 
 <body>
@@ -434,7 +437,7 @@
     </div>
     <div class="lisbon-case1">
         <div class="lisbon-case1-content">
-            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Earthquakes Lisbon"
+            <iframe class="lazyload" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Earthquakes Lisbon"
                 src="//aereshogeschool.maps.arcgis.com/apps/Embed/index.html?webmap=c7028abe9c18405b9beb054d04782d3b&extent=-11.9263,36.576,-5.8618,39.589&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=dark"></iframe>
         </div>
         <div class="lisbon-case1-txt">
@@ -494,7 +497,7 @@
     <!-- "Modern" Lisbon -->
     <div class="modern-lisbon">
         <div class="modern-lisbon-content">
-            <img class="lazyload" src="img/castellodesaojorge.webp" alt="">
+            <img class="lazyload" data-src="img/castellodesaojorge.webp" alt="">
         </div>
         <div class="modern-lisbon-txt">
             <h1 class="modern-lisbon-txt-h1">Modern Lissabon</h1>
@@ -535,7 +538,6 @@
             <a href="resources.html">Bronnen</a>
         </p>
     </footer>
-    <script src="javascript/lazyload.js"></script>
 </body>
 
 </html>
