@@ -10,21 +10,28 @@ body {
     font-size: 15px;
 }
 
-footer {
+.footer {
     margin-top: 30px;
     height: 30px;
     text-align: center;
 }
 
-footer .left {
+.footer .left {
     float: left;
     width: 50%;
+    font-size: 11px;
 }
 
-footer .right {
+.footer .right {
     float: right;
     width: 50%;
     text-align: right;
+    font-size: 11px;
+}
+
+.footer .left a, .footer .right a {
+    text-decoration: none;
+    color: black;
 }
 
 /* content */
