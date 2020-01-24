@@ -17,7 +17,7 @@ window.addEventListener('load', (event) => {
                 pointRadius: '0',
                 fill: true,
                 yAxisID: 'Y-axis-1',
-                data: [11.1, 8.5, 9.3, 9.1, 8.8, 8.2, 7.7, 7.5, 8.1, 10.8, 10.7, 10.2]
+                data: [10, 10, 6, 9, 6, 2, 1, 1, 3, 8, 9, 11]
             }, {
                 type: "bar",
                 label: "Gemiddelde dagen neerslag per maand Amsterdam",
@@ -38,7 +38,7 @@ window.addEventListener('load', (event) => {
                 fill: false,
                 yAxisID: 'Y-axis-2',
                 order: 1,
-                data: [55.2, 40.9, 41.6, 43.7, 49.4, 45.1, 44.5, 49.5, 49.1, 68.5, 59.0, 55.2]
+                data: [95, 90, 50, 65, 55, 15, 5, 5, 30, 80, 105, 120]
             }, {
                 type: "line",
                 label: 'Gemiddelde neerslag Amsterdam',
